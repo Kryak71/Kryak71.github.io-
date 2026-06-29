@@ -1,0 +1,98 @@
+/* КОММЕНТАРИЙ CSS №1: Стили для тега BODY (задание 1) */
+/* Фоновый рисунок, без повтора, шрифт Times New Roman, 30pt, цвет черный */
+body {
+    background-image: url('sad.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30pt;
+    color: black;
+    margin: 0;
+    padding: 20px;
+}
+
+/* КОММЕНТАРИЙ CSS №2: Стили для заголовка H2 (задание 2) */
+/* Перечеркнутый, красный цвет, выравнивание по ширине */
+h2 {
+    text-decoration: line-through;
+    color: red;
+    text-align: justify;
+}
+
+/* КОММЕНТАРИЙ CSS №3: Общие стили для карточки контента */
+.card {
+    background-color: rgba(255, 255, 240, 0.92);
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 28px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль для абзаца ФИО */
+.fio {
+    font-weight: bold;
+    background: #fff0d0;
+    padding: 5px 15px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+/* Стиль для ответа о каскадности (задание 5) */
+.cascade-box {
+    background: #eef4ff;
+    border-left: 8px solid #1e466e;
+    padding: 15px;
+    font-size: 0.7em;
+    margin-top: 35px;
+    border-radius: 18px;
+}
+
+.cascade-box ul {
+    margin-left: 20px;
+}
+
+/* Стили для ссылок (псевдоклассы: задание 4) */
+a {
+    font-size: 0.9em;
+}
+
+a:visited {
+    color: red;
+}
+
+a:active {
+    color: cyan;
+    text-decoration: none;
+}
+
+a:link {
+    color: #0000ee;
+}
+
+/* Стили для блока валидации */
+.validation-block {
+    background: #eef0f5;
+    border-radius: 18px;
+    padding: 12px;
+    margin-top: 25px;
+    font-size: 0.6em;
+    font-family: monospace;
+}
+
+.note {
+    margin-top: 15px;
+    font-size: 0.55em;
+    text-align: right;
+    font-style: italic;
+}
+
+hr {
+    margin: 25px 0;
+}
+
+/* наследование шрифта для всех элементов */
+p, li, a, h3, .cascade-box {
+    font-family: 'Times New Roman', Times, serif;
+}

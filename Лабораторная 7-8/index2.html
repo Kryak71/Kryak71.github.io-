@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <header class="main-header">Шапка (логотип)</header>
+    
+    <nav class="main-nav">
+        <a href="#">Главная</a>
+        <a href="#">О нас</a>
+        <a href="#">Услуги</a>
+        <a href="#">Портфолио</a>
+        <a href="#">Блог</a>
+        <a href="#">Контакты</a>
+    </nav>
+
+    <main class="container">
+        <div class="grid-layout">
+            
+            <div class="grid-item">
+                <h1 class="form-title">Оформить заказ ↓</h1>
+                <div class="input-group">
+                    <label><span>*</span> Имя, Отчество:</label>
+                    <input type="text">
+                </div>
+                <div class="input-group">
+                    <label>E-Mail:</label>
+                    <input type="email">
+                </div>
+                <div class="input-group">
+                    <label><span>*</span> Телефон:</label>
+                    <input type="tel">
+                </div>
+                <div class="input-group">
+                    <label>Город:</label>
+                    <input type="text">
+                </div>
+                <div class="input-group">
+                    <label>Почтовый индекс:</label>
+                    <input type="text">
+                </div>
+                <div class="input-group">
+                    <label>Адрес:</label>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="grid-item">
+                <div class="input-group" style="margin-top: 50px;">
+                    <label><span>*</span> Регион / Область:</label>
+                    <select><option>--- Выберите ---</option></select>
+                </div>
+
+                <p class="section-label">Выберите удобный способ доставки для этого заказа:</p>
+                <div class="option-row">
+                    <label><input type="radio" checked> Фиксированная стоимость доставки</label>
+                    <span class="price-tag">$5.00</span>
+                </div>
+
+                <p class="section-label">Выберите способ оплаты для этого заказа:</p>
+                <div class="option-row">
+                    <label><input type="radio" checked> Оплата при доставке</label>
+                </div>
+
+                <p class="section-label">Вы можете добавить комментарий к своему заказу:</p>
+                <textarea class="comment-area" rows="6"></textarea>
+
+                <div class="button-wrapper">
+                    <button class="submit-btn">Оформить</button>
+                </div>
+            </div>
+
+            <div class="grid-item card-cell">
+                <div class="product-card">
+                    <div class="card-top">
+                        <span class="wishlist-icon">♡</span>
+                        <div class="promo-badge">
+                            <span class="cart-icon">🛒</span>
+                            <div class="promo-text credit">КРЕДИТ <br> ДО <b>36</b> МЕС</div>
+                            <div class="promo-text install">РАССРОЧКА <br> ДО <b>6</b> МЕС</div>
+                        </div>
+                    </div>
+                    
+                    <img src="lenta copy.png" alt="L920-5" class="product-img">
+                    
+                    <div class="product-info">
+                        <p class="category">Потолочные светильники</p>
+                        <h2 class="product-name">Светодиодная RGB лента Tapo L920-5</h2>
+                        
+                        <div class="price-row">
+                            <span class="label">Супер цена:</span>
+                            <span class="current-price">199.00</span>
+                            <span class="old-price">242.68</span>
+                        </div>
+
+                        <div class="bonus-tag">Вернём до <b>7.28</b> на бонусную карту</div>
+                        <p class="disclaimer">*тип рассрочки при которой скидка не действует</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item info-block">
+                Основы алгоритмизации и программирования 1 п/гр / Арифметико-логические основы вычислительной техники 1 п/гр
+            </div>
+            <div class="grid-item info-block center">3</div>
+            <div class="grid-item info-block">
+                Основы алгоритмизации и программирования 1 п/гр / Арифметико-логические основы вычислительной техники 1 п/гр
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2026 Адаптивная вёрстка | <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a></p>
+    </footer>
+
+</body>
+</html>

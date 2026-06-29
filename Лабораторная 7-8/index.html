@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Оформление заказа</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Оформить заказ ↓</h2>
+    
+    <form class="checkout-form">
+        <div class="form-columns">
+            <div class="column">
+                <label><span>*</span> Имя, Отчество:</label>
+                <input type="text">
+
+                <label>E-Mail:</label>
+                <input type="email">
+
+                <label><span>*</span> Телефон:</label>
+                <input type="tel">
+
+                <label>Город:</label>
+                <input type="text">
+
+                <label>Почтовый индекс:</label>
+                <input type="text">
+
+                <label>Адрес:</label>
+                <input type="text">
+            </div>
+
+            <div class="column">
+                <label><span>*</span> Регион / Область:</label>
+                <select>
+                    <option>--- Выберите ---</option>
+                </select>
+
+                <p class="section-title">Выберите удобный способ доставки для этого заказа:</p>
+                <label class="radio-label">
+                    <input type="radio" name="delivery" checked> Фиксированная стоимость доставки
+                    <span class="price">$5.00</span>
+                </label>
+
+                <p class="section-title">Выберите способ оплаты для этого заказа:</p>
+                <label class="radio-label">
+                    <input type="radio" name="payment" checked> Оплата при доставке
+                </label>
+
+                <p class="section-title">Вы можете добавить комментарий к своему заказу:</p>
+                <textarea rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="button-row">
+            <button type="submit" class="order-btn">Оформить</button>
+        </div>
+    </form>
+
+    <hr>
+
+    <div class="product-card">
+        <div class="card-icons">
+            <span class="icon-heart">♡</span>
+            <span class="icon-cart">🛒</span>
+        </div>
+        
+        <div class="credit-info">
+            <p class="credit">КРЕДИТ <br> ДО <span>36</span> МЕС</p>
+            <p class="installment">РАССРОЧКА <br> ДО <span>6</span> МЕС</p>
+        </div>
+
+        <img src="lenta copy.png" alt="Светодиодная лента">
+
+        <div class="product-details">
+            <p class="category">Потолочные светильники</p>
+            <h3 class="product-name">Светодиодная RGB лента Tapo L920-5</h3>
+            
+            <div class="price-block">
+                <span class="label">Супер цена:</span>
+                <span class="new-price">199.00</span>
+                <span class="old-price">242.68</span>
+            </div>
+
+            <div class="bonus-badge">
+                <img src="lilicon.png" alt="icon">
+                Вернём до <strong>7.28</strong> на бонусную карту
+            </div>
+            <p class="disclaimer">*тип рассрочки при которой скидка не действует</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

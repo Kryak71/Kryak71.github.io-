@@ -1,0 +1,343 @@
+/* ========================================
+   ТИП: ВНЕШНЯЯ ТАБЛИЦА СТИЛЕЙ (External Style Sheet)
+   ======================================== */
+/* Данный файл представляет собой внешнюю таблицу стилей.
+   Подключается к HTML-документу через тег:
+   <link rel="stylesheet" href="styles.css">
+   Преимущества: разделение структуры и оформления, 
+   кэширование, переиспользование на нескольких страницах */
+
+/* ========================================
+   ТИП: ИМПОРТ (Import)
+   ======================================== */
+/* Директива @import позволяет импортировать внешние стили
+   из других CSS-файлов или Google Fonts.
+   ВАЖНО: @import должна быть первой в CSS-файле */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* ========================================
+   Универсальный селектор (*) - сброс отступов
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================================
+   Селектор по тегу BODY - основные стили страницы
+   ======================================== */
+body {
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2% 5%;
+}
+
+/* ========================================
+   Селектор по тегу SECTION - стили секций
+   ======================================== */
+section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ========================================
+   СЕЛЕКТОР ПО КЛАССУ (.custom-list)
+   ======================================== */
+.custom-list {
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+.custom-list li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+/* Псевдоэлемент ::before - добавляет галочку перед пунктом списка */
+.custom-list li::before {
+    content: "✓";
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+}
+
+/* ========================================
+   СЕЛЕКТОР ПО ИДЕНТИФИКАТОРУ (#id)
+   ======================================== */
+#about {
+    border-left: 5px solid #667eea;
+}
+
+#skills {
+    border-left: 5px solid #f093fb;
+}
+
+#projects {
+    border-left: 5px solid #4facfe;
+}
+
+/* ========================================
+   ПСЕВДОКЛАССЫ
+   ======================================== */
+/* Псевдокласс :hover - при наведении курсора */
+a {
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+    transform: translateX(3px);
+}
+
+/* Псевдокласс :focus - при фокусе на элементе */
+input:focus, 
+textarea:focus, 
+select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+/* ========================================
+   ПСЕВДОЭЛЕМЕНТЫ
+   ======================================== */
+/* Псевдоэлемент ::first-letter - стилизация первой буквы */
+#about p:first-of-type::first-letter {
+    font-size: 2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+/* Псевдоэлемент ::after - добавление контента после элемента */
+.pdf-btn::after {
+    content: " 📄";
+}
+
+.view-pdf-btn::after {
+    content: " 👁️";
+}
+
+/* ========================================
+   КОМБИНАТОРЫ
+   ======================================== */
+/* Дочерний селектор (>) - выбирает прямых потомков */
+nav > a {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+nav > a:hover {
+    background: #667eea;
+    color: white;
+}
+
+/* Соседний селектор (+) - выбирает элемент, идущий сразу после другого */
+h2 + p {
+    font-weight: bold;
+    background: #f0f0f0;
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+/* ========================================
+   СЕЛЕКТОРЫ АТРИБУТОВ
+   ======================================== */
+/* Селектор по атрибуту target со значением "_blank" */
+a[target="_blank"] {
+    background: #e8e8e8;
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+/* Селектор по атрибуту type со значением "email" */
+input[type="email"] {
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+input[type="email"]:focus {
+    border-color: #667eea;
+}
+
+/* ========================================
+   ОФОРМЛЕНИЕ ИЗОБРАЖЕНИЙ
+   ======================================== */
+img {
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    max-width: 100%;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   СТИЛИЗАЦИЯ ТАБЛИЦ
+   ======================================== */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+.styled-table th,
+.styled-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.styled-table th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+/* Псевдокласс :nth-child(even) - выбор четных строк */
+.styled-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tr:hover {
+    background-color: #e8e8e8;
+}
+
+/* ========================================
+   СТИЛИЗАЦИЯ ФОРМ
+   ======================================== */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+/* Стили для кнопок */
+.submit-btn,
+.reset-btn {
+    padding: 10px 25px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    background: #c82333;
+}
+
+/* ========================================
+   АНИМАЦИИ
+   ======================================== */
+/* Определение ключевых кадров анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Применение анимации к секциям */
+section {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Применение анимации к заголовку h1 */
+h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ========================================
+   ОФОРМЛЕНИЕ ТЕКСТА
+   ======================================== */
+b, 
+strong {
+    font-weight: bold;
+    color: #764ba2;
+}
+
+/* ========================================
+   ТИП: ВНУТРЕННЯЯ ТАБЛИЦА СТИЛЕЙ (Internal Style Sheet)
+   ======================================== */
+/* Внутренняя таблица стилей размещается внутри HTML-документа в теге <style>.
+   Пример:
+   <style>
+       body {
+           background: #f0f0f0;
+       }
+   </style>
+   Используется для стилей, специфичных для одной страницы.
+   В отличие от внешней таблицы стилей, код находится непосредственно в HTML.
+*/
+
+/* ========================================
+   ПРИМЕЧАНИЯ ПО КАСКАДНОСТИ И ПРИОРИТЕТУ
+   ======================================== */
+/* 
+   Приоритет применения стилей (от высшего к низшему):
+   
+   1. !important - переопределяет все правила
+   2. Inline стили - style="..." в HTML-элементе
+   3. ID селекторы - #id
+   4. Классы, псевдоклассы, атрибуты - .class, :hover, [type]
+   5. Элементы (теги) и псевдоэлементы - div, ::before
+   6. Универсальный селектор - *
+   
+   Типы подключения CSS по приоритету (при одинаковой специфичности):
+   
+   1. Внутренняя таблица стилей (тег <style>) - выше
+   2. Внешняя таблица стилей (<link>) - ниже
+   3. Импортированные стили (@import) - еще ниже
+   4. Браузерные стили по умолчанию - самые низкие
+   
+   Важно: порядок подключения имеет значение - последующие стили
+   переопределяют предыдущие при одинаковой специфичности.
+*/

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная вёрстка - Вариант 0 | Познанский А.А.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #e2e6ea;
+            padding: 20px;
+        }
+        .adaptive {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .header {
+            background: #2c5f8a;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 22px;
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .student-name {
+            font-size: 13px;
+            color: #ffdb7e;
+            margin-top: 6px;
+            font-weight: normal;
+        }
+        .nav {
+            background: #3e8e5e;
+            text-align: center;
+            padding: 12px;
+        }
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 10px;
+            border-radius: 25px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .nav a:hover {
+            background: #2d6e48;
+            transform: scale(1.02);
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 12px;
+        }
+        .block {
+            background: #f4f7fa;
+            text-align: center;
+            padding: 55px 0;
+            border-radius: 12px;
+            border: 1px solid #cfdde6;
+            font-weight: 600;
+            color: #2c5f8a;
+            transition: all 0.2s;
+        }
+        .block:hover {
+            background: #e8f0f5;
+            border-color: #3e8e5e;
+        }
+        .social a {
+            color: #ffdb7e;
+            margin: 0 10px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .social a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        .footer {
+            background: #2c5f8a;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 18px;
+            font-size: 13px;
+        }
+        .group-info {
+            background: #eef2f6;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #2c5f8a;
+            border-top: 1px solid #cfdde6;
+        }
+
+        /* По умолчанию (десктоп > 1024px) — 3 колонки */
+        .block {
+            width: calc(33.333% - 8px);
+        }
+
+        /* Планшет (768px - 1024px) — 2 колонки */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .block {
+                width: calc(50% - 6px);
+            }
+        }
+
+        /* Телефон (до 768px) — 1 колонка */
+        @media (max-width: 768px) {
+            .block {
+                width: 100%;
+            }
+            .nav a {
+                margin: 0 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="adaptive">
+        <div class="header">
+            📱 Адаптивный макет
+            <div class="student-name">🎓 Познанский Андрей Александрович | ПЗТ-43 | Вариант 0</div>
+        </div>
+        <div class="nav">
+            <a href="#">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Блог</a>
+            <a href="#">Контакты</a>
+        </div>
+        <div class="row">
+            <div class="block">📦 Блок 1</div>
+            <div class="block">📦 Блок 4</div>
+            <div class="block">📦 Блок 5</div>
+        </div>
+        <div class="row">
+            <div class="block">📦 Блок 2</div>
+            <div class="block">📦 Блок 3</div>
+            <div class="block">📦 Блок 6</div>
+        </div>
+        <div class="footer">
+            <p>© 2026 Адаптивная вёрстка | Лабораторная работа №5</p>
+            <div class="social">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="group-info">
+            ✅ Выполнил: Познанский Андрей Александрович (ПЗТ-43) | Адаптивная сетка на Flexbox + медиазапросы
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Моё портфолио | Андрей Познанский</title>
+    
+    <style>
+        /* ========================================
+           ОСНОВНЫЕ СТИЛИ (НОВАЯ ЦВЕТОВАЯ ГАММА)
+           ======================================== */
+        
+        /* Универсальный селектор */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Подключение шрифтов */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0a1f1a 0%, #0a2f1f 50%, #0a1f1a 100%);
+            padding: 2% 5%;
+            min-height: 100vh;
+        }
+
+        /* Шапка */
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #1e3a2f, #0f2a1f);
+            border-radius: 30px;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #6fbf4c, #2ecc71, #27ae60);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #9beb9b;
+            font-weight: 500;
+        }
+
+        /* Навигация */
+        nav {
+            background: rgba(30, 58, 47, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 50px;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        nav a {
+            color: #b8f2b0;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Секции */
+        section {
+            background: rgba(15, 35, 25, 0.85);
+            backdrop-filter: blur(5px);
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid rgba(46, 204, 113, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            border-color: rgba(46, 204, 113, 0.5);
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #2ecc71;
+            display: inline-block;
+            color: #6fbf4c;
+        }
+
+        h3 {
+            color: #9beb9b;
+            margin: 1rem 0 0.5rem 0;
+            font-weight: 600;
+        }
+
+        /* Цветные границы секций */
+        #about {
+            border-left: 5px solid #2ecc71;
+        }
+        #skills {
+            border-left: 5px solid #f39c12;
+        }
+        #projects {
+            border-left: 5px solid #3498db;
+        }
+        #media {
+            border-left: 5px solid #e74c3c;
+        }
+        #table {
+            border-left: 5px solid #9b59b6;
+        }
+        #contact {
+            border-left: 5px solid #1abc9c;
+        }
+
+        /* Стили для списков */
+        .custom-list {
+            list-style-type: none;
+            margin-left: 1rem;
+        }
+
+        .custom-list li {
+            margin: 0.7rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+        }
+
+        .custom-list li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Ссылки */
+        a {
+            color: #6fbf4c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #2ecc71;
+            text-decoration: underline;
+        }
+
+        a[target="_blank"] {
+            background: rgba(46, 204, 113, 0.1);
+            padding: 2px 8px;
+            border-radius: 15px;
+        }
+
+        /* Изображения */
+        img {
+            border-radius: 20px;
+            border: 3px solid #2ecc71;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            max-width: 100%;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(46, 204, 113, 0.3);
+        }
+
+        /* Таблица */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .styled-table th {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+            font-weight: 600;
+        }
+
+        .styled-table td {
+            background: rgba(30, 58, 47, 0.6);
+            border-bottom: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        .styled-table tr:hover td {
+            background: rgba(46, 204, 113, 0.2);
+        }
+
+        /* Форма */
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px;
+            background: rgba(30, 58, 47, 0.8);
+            border: 1px solid rgba(46, 204, 113, 0.4);
+            border-radius: 12px;
+            font-size: 1rem;
+            color: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #2ecc71;
+            box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+            background: rgba(30, 58, 47, 1);
+        }
+
+        .contact-form label {
+            color: #9beb9b;
+            font-weight: 500;
+        }
+
+        /* Кнопки */
+        .submit-btn,
+        .reset-btn,
+        .pdf-btn,
+        .view-pdf-btn {
+            padding: 12px 28px;
+            margin: 5px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .reset-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .reset-btn:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #c0392b, #a93226);
+        }
+
+        .pdf-btn,
+        .view-pdf-btn {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            display: inline-block;
+        }
+
+        .pdf-btn:hover,
+        .view-pdf-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+            text-decoration: none;
+        }
+
+        /* Псевдоэлементы */
+        .pdf-btn::after {
+            content: " 📄";
+        }
+        .view-pdf-btn::after {
+            content: " 👁️";
+        }
+
+        #about p::first-letter {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #2ecc71;
+        }
+
+        /* Аудио/видео */
+        audio, video {
+            border-radius: 15px;
+            margin: 10px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 3rem;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #0a1f1a, #0f2a1f);
+            border-radius: 25px;
+            color: #9beb9b;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+        }
+
+        footer a {
+            color: #6fbf4c;
+        }
+
+        footer a:hover {
+            color: #2ecc71;
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Радио и чекбоксы */
+        input[type="radio"],
+        input[type="checkbox"] {
+            accent-color: #2ecc71;
+            margin-right: 8px;
+        }
+
+        /* Кнопки PDF в отдельном блоке */
+        .pdf-buttons {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            body {
+                padding: 3% 3%;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav a {
+                display: inline-block;
+                margin: 5px;
+                font-size: 0.9rem;
+            }
+            
+            section {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+
+    <header>
+        <h1>Познанский Андрей Александрович</h1>
+        <p>⚡ Senior Full-Stack Developer | Мастер веб-разработки ⚡</p>
+    </header>
+
+    <nav>
+        <a href="#about">🏠 Обо мне</a>
+        <a href="#skills">💪 Навыки</a>
+        <a href="#projects">📁 Проекты</a>
+        <a href="#media">🎬 Медиа</a>
+        <a href="#table">📊 Таблица</a>
+        <a href="#contact">✉️ Контакты</a>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>Обо мне</h2>
+            <p>Sup! Меня зовут <b>Андрюха</b>. Я жёсткий прогер! 🔥</p>
+            <p>Мама называет меня зайчик, но в душе я лев 🦁</p>
+            <p>Девочки держитесь! 😎</p>
+            <img src="малой_красавчик.jpg" alt="Моё фото" width="200">
+            <p>Мой <a href="https://github.com/Kryak71/Practice-TRPO" target="_blank">GitHub</a> ⭐</p>
+        </section>
+
+        <section id="skills">
+            <h2>Мои навыки</h2>
+            
+            <h3>Что я умею:</h3>
+            <ul class="custom-list">
+                <li>Делать заголовки</li>
+                <li>Вставлять picture</li>
+                <li>Делать ссылки</li>
+                <li>Делаю самые жёсткие сайты</li>
+                <li>Легенда Скиделя</li>
+            </ul>
+
+            <h3>План:</h3>
+            <ol>
+                <li>Заработать миллион вечнозелёных 💰</li>
+                <li>Купить спорткар 🏎️</li>
+                <li>Купить пентхаус 🏰</li>
+            </ol>
+
+            <h3>Определения:</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>Язык для сайтов</dd>
+                <dt>Тег</dt>
+                <dd>Элемент HTML</dd>
+            </dl>
+        </section>
+
+        <section id="projects">
+            <h2>Мой GitHub</h2>
+            <a href="https://github.com/Kryak71/Practice-TRPO" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="60">
+            </a>
+            <p>Нажми на иконку, чтобы посмотреть мои проекты 🚀</p>
+        </section>
+
+        <section id="media">
+            <h2>Медиа</h2>
+            
+            <h3>🎵 Аудио</h3>
+            <audio controls src="Макс_Корж-Время.mp3"></audio>
+            
+            <h3>🎥 Видео 1</h3>
+            <video controls width="300" src="покатушки.MOV"></video>
+            
+            <h3>🎬 Видео 2</h3>
+            <video controls width="300" src="lg.spots_2025-04-01-13-40-08_1743504008723.mp4"></video>
+            
+            <h3>📺 YouTube</h3>
+            <iframe width="300" height="200" src="https://www.youtube.com/embed/TPas02fsuKU?autoplay=1" style="border-radius: 15px;"></iframe>
+        </section>
+
+        <section id="table">
+            <h2>Таблица достижений</h2>
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Что делаю</th>
+                        <th>Сколько</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Кайфую 😎</td>
+                        <td>Всю жизнь</td>
+                    </tr>
+                    <tr>
+                        <td>Делаю сайты 💻</td>
+                        <td>Почти всю жизнь</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Напиши мне</h2>
+            
+            <form class="contact-form">
+                <label>👤 Имя:</label>
+                <input type="text" placeholder="Введите ваше имя">
+                
+                <label>📧 Email:</label>
+                <input type="email" placeholder="example@mail.com">
+                
+                <label>📌 Тема:</label>
+                <select>
+                    <option>Вопрос</option>
+                    <option>Предложение</option>
+                    <option>Сотрудничество</option>
+                </select>
+                
+                <label>⚡ Срочно?</label><br>
+                <input type="radio" name="urgent"> Да, срочно! 🔥<br>
+                <input type="radio" name="urgent"> Нет, не срочно 🌿<br><br>
+                
+                <label>✅ Что нужно:</label><br>
+                <input type="checkbox"> Сайт "под ключ"<br>
+                <input type="checkbox"> Помощь с кодом<br>
+                <input type="checkbox"> Консультация<br><br>
+                
+                <label>💬 Сообщение:</label>
+                <textarea rows="4" placeholder="Напишите ваше сообщение..."></textarea>
+                
+                <button type="submit" class="submit-btn">📤 Отправить</button>
+                <button type="reset" class="reset-btn">🗑️ Очистить</button>
+            </form>
+        </section>
+        
+        <div class="pdf-buttons">
+            <a href="ЛР11.pdf" download class="pdf-btn">Скачать PDF</a>
+            <a href="ЛР11.pdf" target="_blank" class="view-pdf-btn">Открыть PDF</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2026 Познанский Андрон | Сделано с ❤️ и 🌿</p>
+        <div style="margin: 15px 0;">
+            <a href="https://instagram.com/andrey_paznanski">📸 Instagram разработчика</a>
+            <p><a href="mailto:paznanskiandrey@gmail.com">✉️ Початимся?</a></p>
+        </div>
+        <p><a href="https://validator.w3.org/" target="_blank">🔍 Валидатор W3C</a></p>
+    </footer>
+
+</body>
+</html>

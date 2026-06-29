@@ -1,0 +1,20 @@
+/* ========================================
+   ДОПОЛНИТЕЛЬНЫЙ ФАЙЛ (ИМПОРТИРУЕТСЯ)
+   ======================================== */
+
+footer {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #333, #555);
+    border-radius: 15px;
+    color: white;
+}
+
+footer a {
+    color: #ff6b6b;
+}
+
+footer a:hover {
+    color: #ff8787;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Фиксированная вёрстка - Вариант 0 | Познанский А.А.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #e8e8e8;
+            padding: 20px;
+        }
+        .fixed {
+            width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .student-name {
+            font-size: 14px;
+            color: #f1c40f;
+            margin-top: 8px;
+        }
+        .nav {
+            background: #2ecc71;
+            text-align: center;
+            padding: 12px;
+        }
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .row {
+            display: flex;
+        }
+        .block-1, .block-2, .block-3 {
+            width: 500px;
+            background: #ecf0f1;
+            text-align: center;
+            padding: 60px 0;
+            border: 1px solid #bdc3c7;
+        }
+        .block-4, .block-5, .block-6 {
+            flex: 1;
+            background: #ecf0f1;
+            text-align: center;
+            padding: 60px 0;
+            border: 1px solid #bdc3c7;
+        }
+        .footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .social a {
+            color: #f1c40f;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .group-info {
+            background: #ecf0f1;
+            text-align: center;
+            padding: 8px;
+            font-size: 13px;
+            color: #2c3e50;
+            border-top: 1px solid #bdc3c7;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed">
+        <div class="header">
+            Шапка (логотип)
+            <div class="student-name">Познанский Андрей Александрович | ПЗТ-43</div>
+        </div>
+        <div class="nav">
+            <a href="#">Главная</a>
+            <a href="#">О нас</a>
+            <a href="#">Услуги</a>
+            <a href="#">Портфолио</a>
+            <a href="#">Блог</a>
+            <a href="#">Контакты</a>
+        </div>
+        <div class="row">
+            <div class="block-1">1 (500px)</div>
+            <div class="block-4">4 (оставшаяся часть)</div>
+        </div>
+        <div class="row">
+            <div class="block-2">2 (500px)</div>
+            <div class="block-5">5 (оставшаяся часть)</div>
+        </div>
+        <div class="row">
+            <div class="block-3">3 (500px)</div>
+            <div class="block-6">6 (оставшаяся часть)</div>
+        </div>
+        <div class="footer">
+            <p>© 2026 Фиксированная вёрстка</p>
+            <div class="social">
+                <a href="#">Facebook</a> | <a href="#">Instagram</a> | <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="group-info">
+            Выполнил: Познанский Андрей Александрович, группа ПЗТ-43 | Вариант 0
+        </div>
+    </div>
+</body>
+</html>

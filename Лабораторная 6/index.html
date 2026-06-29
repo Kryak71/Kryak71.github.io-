@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ЛР №6: Основы CSS Grid (версия 2.0)</title>
+    <link rel="stylesheet" href="grid-layout.css">
+</head>
+<body>
+<div class="container">
+    <h1>Лабораторная работа №6</h1>
+    <div class="sub">Тема: "Двумерная сетка CSS Grid — полный контроль" (вариант с улучшенными примерами)</div>
+
+    <!-- 1. display: grid -->
+    <section>
+        <h2>📐 1. Включение грида: display: grid</h2>
+        <div class="grid-box" style="grid-template-columns: 1fr 1fr 1fr;">
+            <div>📦 колонка A</div>
+            <div>📦 колонка B</div>
+            <div>📦 колонка C</div>
+        </div>
+        <div class="note">💡 <code>display: grid;</code> + <code>grid-template-columns: 1fr 1fr 1fr;</code> → три адаптивные колонки, каждая занимает равную долю свободного пространства.</div>
+    </section>
+
+    <!-- 2. grid-template-rows + gap -->
+    <section>
+        <h2>📏 2. Управление высотой строк + отступы (gap)</h2>
+        <div class="grid-box" style="grid-template-columns: 1fr 1fr; grid-template-rows: 70px 90px; gap: 18px;">
+            <div>🔹 высота: 70px</div>
+            <div>🔹 высота: 70px</div>
+            <div>🔸 высота: 90px</div>
+            <div>🔸 высота: 90px</div>
+        </div>
+        <div class="note">🧩 <code>grid-template-rows: 70px 90px;</code> — первая строка фикс 70px, вторая 90px. <br>
+        ➕ <code>gap: 18px;</code> создает промежутки между всеми ячейками (и ряды и колонки).</div>
+    </section>
+
+    <!-- 3. repeat() -->
+    <section>
+        <h2>♻️ 3. Функция repeat() — сокращение кода</h2>
+        <div class="grid-box" style="grid-template-columns: repeat(4, 1fr); gap: 12px;">
+            <div>1/4</div>
+            <div>2/4</div>
+            <div>3/4</div>
+            <div>4/4</div>
+        </div>
+        <div class="note">✨ <code>repeat(4, 1fr)</code> -> эквивалентно <code>1fr 1fr 1fr 1fr</code>. Удобно при создании сеток с большим количеством колонок.</div>
+    </section>
+
+    <!-- 4. minmax() -->
+    <section>
+        <h2>📌 4. Гибкость + ограничения: minmax()</h2>
+        <div class="grid-box" style="grid-template-columns: minmax(140px, 1.2fr) 1fr 1fr; gap: 14px;">
+            <div>🔹 minmax(140px, 1.2fr)<br>Не меньше 140px</div>
+            <div>🔸 2-я колонка</div>
+            <div>🔹 3-я колонка</div>
+        </div>
+        <div class="note">⚙️ Первая колонка не сожмётся менее 140 пикселей, но может расширяться до 1.2fr. Супер-полезно для адаптивности.</div>
+    </section>
+
+    <!-- 5. grid-column / grid-row -->
+    <section>
+        <h2>🧩 5. Размещение элементов: grid-column / grid-row</h2>
+        <div class="grid-box" style="grid-template-columns: repeat(3, 1fr); grid-auto-rows: 72px; gap: 12px;">
+            <div style="grid-column: 1 / 3; background: #3b82f6; border-bottom-color: #60a5fa;">📌 <strong>grid-column: 1/3</strong> → 2 колонки</div>
+            <div style="background: #475569;">2️⃣</div>
+            <div style="grid-row: 2 / 4; background: #10b981; border-bottom-color: #34d399;">🧩 <strong>grid-row: 2/4</strong><br>занимает 2 строки</div>
+            <div>4️⃣</div>
+            <div>5️⃣</div>
+            <div>6️⃣</div>
+        </div>
+        <div class="note">📐 cиняя ячейка растянута горизонтально (две колонки), зелёная — вертикально, перекрывая две строки. Элементы могут менять сетку независимо.</div>
+    </section>
+
+    <!-- 6. grid-template-areas (обновленная стилизация + визуальный макет)-->
+    <section>
+        <h2>🗺️ 6. Именованные области: grid-template-areas</h2>
+        <div class="area-grid-custom">
+            <div class="header-area">🏆 HEADER (шапка сайта)</div>
+            <div class="sidebar-area">🧭 SIDEBAR / навигация</div>
+            <div class="main-area">📰 MAIN CONTENT — главная информация</div>
+            <div class="footer-area">📌 FOOTER — контакты, копирайт</div>
+        </div>
+        <div class="note">🎯 <code>grid-template-areas: "header header" "sidebar main" "footer footer";</code> — наглядное описание макета. Не нужно указывать номера линий, используем понятные имена.</div>
+    </section>
+
+    <!-- 7. align-items / justify-items -->
+    <section>
+        <h2>🎯 7. Выравнивание элементов внутри ячеек (align/justify-items)</h2>
+        <div class="grid-box" style="grid-template-columns: 1fr 1fr; height: 160px; align-items: center; justify-items: center; background: #0f172a; border-radius: 24px;">
+            <div>⭐ по центру<br>верт+гориз</div>
+            <div>⭐ центр<br>идеально</div>
+            <div>🔹 3</div>
+            <div>🔹 4</div>
+        </div>
+        <div class="note">📦 <code>align-items: center</code> — вертикальное выравнивание контента внутри ячеек. <code>justify-items: center</code> — горизонтальное центрирование. Все дочерние div подчиняются правилу.</div>
+    </section>
+
+    <!-- 8. justify-content / align-content (сетка целиком) -->
+    <section>
+        <h2>🧲 8. Выравнивание всей grid-сетки внутри контейнера</h2>
+        <div class="grid-box" style="grid-template-columns: 100px 100px; grid-template-rows: 85px 85px; justify-content: center; align-content: center; height: 270px; gap: 14px; background: #0b1221;">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+        <div class="note">🧿 <code>justify-content: center; align-content: center;</code> — помогает разместить сетку строго по центру контейнера, если размер контейнера больше суммарных размеров сетки. Также можно использовать <code>space-between, end</code> и др.</div>
+    </section>
+
+    <!-- 9. auto-fill / auto-fit (динамическое изменение)-->
+    <section>
+        <h2>🌀 9. Резиновая верстка: auto-fill + minmax()</h2>
+        <div class="grid-box" style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px;">
+            <div>Элемент 1</div>
+            <div>Элемент 2</div>
+            <div>Элемент 3</div>
+            <div>Элемент 4 ➕</div>
+        </div>
+        <div class="note">⚡ <code>repeat(auto-fill, minmax(130px, 1fr))</code> — колонки автоматически заполняют ряд, каждая минимум 130px. При изменении ширины окна количество колонок меняется плавно. Идеально для адаптивных карточек.</div>
+    </section>
+
+    <!-- 10. Расширенная шпаргалка с доп. свойствами -->
+    <section>
+        <h2>📚 Шпаргалка по CSS Grid (ключевые свойства)</h2>
+        <table>
+            <thead>
+                <tr><th>Свойство / значение</th><th>Пример кода</th><th>Описание</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>display</code></td><td><code>grid | inline-grid</code></td><td>Активация грид-контекста</td></tr>
+                <tr><td><code>grid-template-columns</code></td><td><code>200px 1fr 2fr</code></td><td>Определяет колонки, их ширину и количество</td></tr>
+                <tr><td><code>grid-template-rows</code></td><td><code>100px auto 150px</code></td><td>Задает высоту строк</td></tr>
+                <tr><td><code>gap</code> / <code>grid-gap</code></td><td><code>16px</code> или <code>10px 20px</code></td><td>Отступы между рядами и колонками</td></tr>
+                <tr><td><code>grid-column</code></td><td><code>span 2</code> / <code>1 / 4</code></td><td>Объединение ячеек по горизонтали</td></tr>
+                <tr><td><code>grid-row</code></td><td><code>span 3</code> / <code>2 / 5</code></td><td>Объединение ячеек по вертикали</td></tr>
+                <tr><td><code>grid-template-areas</code></td><td><code>"nav nav" "side main"</code></td><td>ASCII-макет сетки, удобное размещение элементов</td></tr>
+                <tr><td><code>align-items</code> / <code>justify-items</code></td><td><code>center</code>, <code>stretch</code>, <code>start</code></td><td>Выравнивание содержимого внутри ячеек (ось Y / X)</td></tr>
+                <tr><td><code>justify-content</code> / <code>align-content</code></td><td><code>space-between</code>, <code>center</code></td><td>Выравнивание всего трек-листа внутри контейнера</td></tr>
+                <tr><td><code>repeat()</code></td><td><code>repeat(4, minmax(80px,1fr))</code></td><td>Создание повторяющихся паттернов</td></tr>
+            </tbody>
+        </table>
+        <div class="note">📌 Дополнительно: <code>grid-auto-rows</code>, <code>grid-auto-flow</code> помогают управлять неявными треками. Грид – мощнейший инструмент для двухмерных макетов!</div>
+    </section>
+    
+    <!-- Бонус: краткое сравнение с flex (личное примечание) -->
+    <section style="background: #0f172a; border-left: 6px solid #facc15;">
+        <h2 style="border-left-color: #facc15;">💭 Заметка: Grid vs Flexbox</h2>
+        <p style="margin-bottom: 10px;">🔹 Grid — идеален для <strong>двумерных</strong> структур (шапка, сайдбар, контент, футер), обеспечивает полный контроль над строками и колонками одновременно.<br>
+        🔸 Flex — лучше для одномерных раскладок: навигационные панели, выравнивание элементов в строку/колонку.<br>
+        🧪 В данной лабораторной работе наглядно показаны основные приёмы Grid, которые можно миксовать с Flex в реальных проектах.</p>
+        <div class="note" style="background: #00000055;">👨‍💻 Работа выполнена в рамках изучения современного CSS. Для проверки адаптивности изменяйте масштаб окна браузера.</div>
+    </section>
+</div>
+</body>
+</html>

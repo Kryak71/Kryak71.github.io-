@@ -1,0 +1,137 @@
+:root {
+    --grid-unit: 8px;
+    --text-color: #333;
+    --price-color: #e74c3c;
+    --credit-color: #b52a8c;
+    --installment-color: #e67e22;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 40px;
+}
+
+/* Основной контейнер карточки */
+.product-card {
+    width: 340px;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: calc(var(--grid-unit) * 3); /* 24px */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Заголовок с иконками */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    color: #888;
+    margin-bottom: var(--grid-unit);
+}
+
+/* Центральный блок: Изображение + Условия */
+.product-main {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--grid-unit) * 2); /* 16px */
+    margin-bottom: calc(var(--grid-unit) * 2); /* 16px */
+}
+
+.product-img {
+    max-width: 180px;
+    height: auto;
+}
+
+/* Блок кредита и рассрочки (теперь опущен и не накладывается) */
+.credit-info-block {
+    text-align: right;
+    font-size: 11px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.credit-text {
+    color: var(--credit-color);
+    margin: 0 0 4px 0;
+}
+
+.installment-text {
+    color: var(--installment-color);
+    margin: 0;
+}
+
+.credit-text span, 
+.installment-text span {
+    font-size: 17px;
+}
+
+/* Детали товара */
+.product-details {
+    text-align: center;
+}
+
+.category {
+    color: #999;
+    font-size: 12px;
+    margin: 0 0 4px 0;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0 0 16px 0;
+}
+
+/* Блок цены */
+.price-block {
+    margin-bottom: 16px;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #555;
+    margin-right: 8px;
+}
+
+.new-price {
+    color: var(--price-color);
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    margin-left: 12px;
+    font-size: 14px;
+}
+
+/* Бонусная плашка */
+.bonus-badge {
+    background: #fdfdfd;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+}
+
+.bonus-badge strong {
+    font-weight: bold;
+}
+
+/* Дисклеймер */
+.disclaimer {
+    font-size: 11px;
+    color: #aaa;
+    margin: 0;
+}

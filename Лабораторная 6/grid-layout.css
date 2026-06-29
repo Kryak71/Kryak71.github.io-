@@ -1,0 +1,194 @@
+/* ===== Глобальный сброс и более "техническая" атмосфера ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0b1120; /* тёмный сине-серый фон */
+    font-family: 'Segoe UI', 'Roboto', 'Fira Code', monospace, system-ui;
+    color: #e9edf2;
+    line-height: 1.5;
+    padding: 32px 24px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    background: #0f172ad9;
+    backdrop-filter: blur(0px);
+    border-radius: 28px;
+    padding: 24px 28px;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* заголовки – сдержанный акцент, без ярко-зелёного */
+h1 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #c084fc, #60a5fa);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 0.35rem;
+    border-left: 5px solid #8b5cf6;
+    padding-left: 20px;
+}
+
+.sub {
+    color: #94a3b8;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #2d3a5e;
+    padding-bottom: 12px;
+    margin-top: 6px;
+    padding-left: 24px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #facc15;
+    border-left: 4px solid #f97316;
+    padding-left: 14px;
+    margin-bottom: 18px;
+    margin-top: 8px;
+}
+
+/* карточки секций – другой стиль: без скругления по умолчанию? нет, но с другими тенями */
+section {
+    background: #111827dd;
+    backdrop-filter: blur(2px);
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    border-radius: 20px;
+    border: 1px solid #28344e;
+    transition: all 0.1s ease;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.demo {
+    background: #0a0f1c;
+    border-radius: 18px;
+    padding: 12px;
+    margin: 18px 0 12px;
+    border: 1px solid #2a3a55;
+}
+
+/* универсальный класс для сетки */
+.grid-box {
+    display: grid;
+    background: transparent;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+/* стилизация ячеек – плоский дизайн, без резких красных, приглушённые тона */
+.grid-box > div {
+    background: #2d3a5e;
+    padding: 18px 12px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 14px;
+    color: white;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    border-bottom: 2px solid #4b5563;
+}
+
+/* разные акценты (но без ярко-зелёного как в исходнике) */
+.grid-box div.special-accent {
+    background: #7c3aed;
+    border-bottom-color: #c084fc;
+}
+
+.note {
+    background: #0f1a2b;
+    border-left: 4px solid #f97316;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 0.85rem;
+    font-family: 'Fira Code', monospace;
+    color: #cbd5e6;
+    border-radius: 12px;
+    border-radius: 12px;
+}
+
+code {
+    background: #00000055;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-family: 'Fira Code', monospace;
+    color: #facc15;
+}
+
+/* таблица – мраморная тема */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 8px;
+    font-size: 0.9rem;
+    background: #0f172a;
+    border-radius: 18px;
+    overflow: hidden;
+}
+th, td {
+    border: 1px solid #2d3a5e;
+    padding: 10px 12px;
+    vertical-align: top;
+}
+th {
+    background: #1e293b;
+    color: #facc15;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+td {
+    background-color: #0f172a;
+}
+
+/* особые модификации для демо-блоков */
+.alt-grid {
+    background: #0b0f1a;
+    border-radius: 20px;
+}
+
+/* Адаптивность для мобил */
+@media (max-width: 650px) {
+    body {
+        padding: 16px;
+    }
+    .container {
+        padding: 16px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* отдельные элементы для 6-й секции (grid-template-areas) меняем стиль */
+.area-grid-custom {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 14px;
+    background: #0a0f1c;
+    padding: 14px;
+    border-radius: 20px;
+    margin: 16px 0;
+}
+.area-grid-custom .header-area { grid-area: header; background: #3b82f6; padding: 18px; text-align: center; font-weight: bold; border-radius: 14px; border-bottom: 3px solid #1d4ed8;}
+.area-grid-custom .sidebar-area { grid-area: sidebar; background: #16a34a; padding: 18px; text-align: center; border-radius: 14px;}
+.area-grid-custom .main-area { grid-area: main; background: #dc2626; padding: 18px; text-align: center; border-radius: 14px;}
+.area-grid-custom .footer-area { grid-area: footer; background: #ea580c; padding: 18px; text-align: center; border-radius: 14px;}
