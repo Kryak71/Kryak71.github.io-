@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Все работы</title>
+<style>
+body {
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f3f5f7;
+}
+header {
+    background:#222;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.menu {
+    padding:15px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    background:white;
+    box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+button {
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    background:#2d7df6;
+    color:white;
+    cursor:pointer;
+}
+button:hover {
+    background:#175dc2;
+}
+iframe {
+    width:100%;
+    height:calc(100vh - 120px);
+    border:none;
+    background:white;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>Все лабораторные и практические работы</h1>
+</header>
+
+<div class="menu">
+<button onclick="openPage('Лабораторная 1-3/index.html')">Лабораторная 1-3 — index</button>
+<button onclick="openPage('Лабораторная 10-11-12/index.html')">Лабораторная 10-11-12 — index</button>
+<button onclick="openPage('Лабораторная 4/index.html')">Лабораторная 4 — index</button>
+<button onclick="openPage('Лабораторная 5/index.html')">Лабораторная 5 — index</button>
+<button onclick="openPage('Лабораторная 5/index1.html')">Лабораторная 5 — index1</button>
+<button onclick="openPage('Лабораторная 5/index2.html')">Лабораторная 5 — index2</button>
+<button onclick="openPage('Лабораторная 5/index3.html')">Лабораторная 5 — index3</button>
+<button onclick="openPage('Лабораторная 6/adaptive-grid.html')">Лабораторная 6 — adaptive-grid</button>
+<button onclick="openPage('Лабораторная 6/fixed-grid.html')">Лабораторная 6 — fixed-grid</button>
+<button onclick="openPage('Лабораторная 6/fluid-grid.html')">Лабораторная 6 — fluid-grid</button>
+<button onclick="openPage('Лабораторная 6/index.html')">Лабораторная 6 — index</button>
+<button onclick="openPage('Лабораторная 6/samastoi.html')">Лабораторная 6 — samastoi</button>
+<button onclick="openPage('Лабораторная 7-8/index.html')">Лабораторная 7-8 — index</button>
+<button onclick="openPage('Лабораторная 7-8/index2.html')">Лабораторная 7-8 — index2</button>
+<button onclick="openPage('Лабораторная 7-8/product_card.html')">Лабораторная 7-8 — product_card</button>
+<button onclick="openPage('Лабораторная 9/index.html')">Лабораторная 9 — index</button>
+<button onclick="openPage('Лабораторная 9/task1.html')">Лабораторная 9 — task1</button>
+<button onclick="openPage('Лабораторная 9/task2.html')">Лабораторная 9 — task2</button>
+<button onclick="openPage('Лабораторная 9/task3.html')">Лабораторная 9 — task3</button>
+<button onclick="openPage('Практическая 1/index.html')">Практическая 1 — index</button>
+</div>
+
+<iframe id="viewer"></iframe>
+
+<script>
+function openPage(path) {
+    document.getElementById('viewer').src = path;
+}
+</script>
+</body>
+</html>
