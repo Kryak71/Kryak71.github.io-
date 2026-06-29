@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Задание 3</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      function runDialogs() {
+        // alert(…)
+        window.alert("Добро пожаловать в практическую работу №3!");
+        // promt()
+        let userName = window.prompt("Пожалуйста, введите ваше имя:", "Гость");
+
+        if (userName !== null && userName.trim() !== "") {
+          // confirm(…)
+          let isCorrect = window.confirm(`Ваше имя действительно ${userName}?`);
+
+          if (isCorrect) {
+            window.alert(`Приятно познакомиться, ${userName}!`);
+          } else {
+            window.alert(
+              "Вы можете запустить скрипт заново, чтобы ввести имя.",
+            );
+          }
+        } else {
+          window.alert("Вы не ввели имя или отменили ввод.");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="index.html"><button>← Назад на главную</button></a>
+    <hr />
+
+    <h2>Задание 3: Диалоговые окна</h2>
+    <button onclick="runDialogs()">Запустить диалоговые окна</button>
+  </body>
+</html>

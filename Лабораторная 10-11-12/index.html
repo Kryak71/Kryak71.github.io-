@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тематический контроль — Вариант №15</title>
+    
+    <script>
+        function showCurrentMonth() {
+            const today = new Date();
+            const monthNumber = today.getMonth() + 1;
+            alert("Номер текущего месяца: " + monthNumber);
+        }
+    </script>
+
+    <script src="script4.js"></script>
+</head>
+<body>
+
+    <h1>Тематический контроль знаний (Вариант №15)</h1>
+    <hr>
+
+    <section id="task1" style="margin-bottom: 30px;">
+        <h2>Задание 1: Работа с объектом Date</h2>
+        <p>Условие: Вывести в диалоговое окно номер текущего месяца.</p>
+        <button onclick="showCurrentMonth()">Показать год</button>
+    </section>
+
+    <hr>
+
+    <section id="task2" style="margin-bottom: 30px;">
+        <h2>Задание 2: Работа с операторами организации циклов</h2>
+        <p>Условие: Вывести на экран Фамилию и Имя n+5 раз (для варианта 15: 15 + 5 = 20 раз) через цикл while.</p>
+        
+        <div id="output-task2" style="line-height: 1.5; max-height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background: #f9f9f9;">
+            <script>
+                // n = 15. Количество повторений: 15 + 5 = 20
+                let count = 20; 
+                let i = 1;
+                while (i <= count) {
+                    document.write(i + ". Познанский Андрей<br>");
+                    i++;
+                }
+            </script>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="task3" style="margin-bottom: 30px;">
+        <h2>Задание 3: Работа с объектом Array</h2>
+        <p>Условие: Сформировать массив из 7 целых элементов. Найти максимальный элемент. Удалить последний элемент. Вывести исходный и измененный массивы.</p>
+        
+        <div id="output-task3" style="line-height: 1.6; border: 1px solid #ccc; padding: 10px; background: #f9f9f9;">
+            <script>
+                let originalArray = [];
+                for (let j = 0; j < 7; j++) {
+                    originalArray.push(Math.floor(Math.random() * 100) + 1);
+                }
+                
+                document.write("<strong>Исходный массив:</strong> [" + [...originalArray].join(", ") + "]<br>");
+                
+                let maxElement = Math.max(...originalArray);
+                document.write("<strong>Максимальный элемент:</strong> " + maxElement + "<br>");
+                
+                let removedElement = originalArray.pop();
+                document.write("<strong>Удаленный (последний) элемент:</strong> " + removedElement + "<br>");
+                
+                document.write("<strong>Измененный массив (после удаления):</strong> [" + originalArray.join(", ") + "]<br>");
+            </script>
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="task4" style="margin-bottom: 30px;">
+        <h2>Задание 4: Работа с объектом Math (Внешний скрипт)</h2>
+        <p>Условие: Расчет по формуле через пользовательскую функцию во внешнем файле.</p>
+        
+        <div style="margin-bottom: 15px;">
+            <label for="param-a">Введите параметр a: </label>
+            <input type="number" id="param-a" value="2" step="any" style="margin-right: 15px;">
+            
+            <label for="param-b">Введите параметр b: </label>
+            <input type="number" id="param-b" value="3" step="any">
+        </div>
+        
+        <button onclick="runCalculation()">Вычислить значение d</button>
+        
+        <div id="output-task4" style="margin-top: 15px; padding: 10px; border: 1px dashed #666; background: #fff; min-height: 20px;">
+            Результат отобразится здесь после нажатия кнопки.
+        </div>
+    </section>
+
+    <hr>
+
+    <section id="task5" style="margin-bottom: 30px;">
+        <h2>Задание 5: Работа со строками STRING</h2>
+        <p>Условие: Операции со строками s1 ("Я люблю Беларусь") и s2 ("Я учусь в Политехническом колледже").</p>
+        
+        <div id="output-task5" style="line-height: 1.6; border: 1px solid #ccc; padding: 10px; background: #f9f9f9;">
+            <script>
+                // 1. Создание строковых переменных
+                let s1 = "Я люблю Беларусь";
+                let s2 = "Я учусь в Политехническом колледже";
+                
+                document.write("<strong>Строка s1:</strong> \"" + s1 + "\"<br>");
+                document.write("<strong>Строка s2:</strong> \"" + s2 + "\"<br><br>");
+                
+                // 2. Определение длины строки s2
+                document.write("<strong>Длина строки s2:</strong> " + s2.length + " символов.<br>");
+                
+                // 3. Выделение n-го символа (вариант 15). 
+                let variantNum = 15;
+                let targetIndex = variantNum - 1; // Индекс в JS начинается с 0, поэтому для 15-го символа нужен индекс 14
+                let charAtValue = s1.charAt(targetIndex);
+                let charCodeValue = s1.charCodeAt(targetIndex);
+                
+                document.write("<strong>Выделенный символ (для варианта " + variantNum + ", индекс " + targetIndex + "):</strong> \"" + charAtValue + "\"<br>");
+                document.write("<strong>ASCII/Unicode код этого символа:</strong> " + charCodeValue + "<br>");
+                
+                // 4. Замена в строке s1 слова "Беларусь" на "Гродно"
+                let modifiedS1 = s1.replace("Беларусь", "Гродно");
+                document.write("<strong>Измененная строка s1:</strong> \"" + modifiedS1 + "\"<br>");
+            </script>
+        </div>
+    </section>
+
+    <hr>
+
+</body>
+</html>Ы
